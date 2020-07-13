@@ -12,20 +12,22 @@ public class ReadingUserInputChallenge {
 
         while (count <= 10) {
 
-            System.out.println("Enter number #" + count);
+            System.out.println("Enter number #" + count + ":");
 
             //check if user input valid number or not
             boolean hasNextInt = scanner.hasNextInt();
 
             if (hasNextInt) {
                 int userInput = scanner.nextInt();
+                //sum valid user input numbers
                 sum += userInput;
+                //count valid user input
                 count++;
             } else {
                 System.out.println("Invalid number");
             }
 
-            scanner.nextLine();
+            scanner.nextLine(); //handle end of line (Enter key)
         }
         scanner.close();
         System.out.println("Total sum numbers = " + sum);
